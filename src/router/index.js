@@ -4,6 +4,8 @@ import Router from "vue-router";
 // 配置路由懒加载
 const Login = () => import("views/Login");
 const Home = () => import("views/home/Home");
+const Welcome = () => import('views/home/children/Welcome');
+const Users = () => import('views/user/Users');
 
 // 安装插件
 Vue.use(Router)
@@ -21,7 +23,18 @@ const router =  new Router({
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      redirect: '/welcome',
+      children: [
+        {
+          path: '/welcome',
+          component: Welcome
+        },
+        {
+          path: '/users',
+          component: Users
+        }
+      ]
     }
 
   ],
@@ -41,4 +54,9 @@ router.beforeEach((to, from, next) => {
   next();
 })
 
+// 解决重复点击导航时，控制台出现报错
+const VueRouterPush = Router.prototype.push
+Router.prototype.push = function push (to) {
+  return VueRouterPush.call(this, to).catch(err => err)
+}
 export default router
