@@ -6,6 +6,8 @@ const Login = () => import("views/Login");
 const Home = () => import("views/home/Home");
 const Welcome = () => import('views/home/children/Welcome');
 const Users = () => import('views/user/Users');
+const Rights = () => import('views/power/Rights.vue');
+const Roles = () => import('views/power/Roles.vue')
 
 // 安装插件
 Vue.use(Router)
@@ -33,6 +35,14 @@ const router =  new Router({
         {
           path: '/users',
           component: Users
+        },
+        {
+          path: '/rights',
+          component: Rights
+        },
+        {
+          path: '/roles',
+          component: Roles
         }
       ]
     }
