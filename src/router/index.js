@@ -9,6 +9,7 @@ const Users = () => import('views/user/Users');
 const Rights = () => import('views/power/Rights.vue');
 const Roles = () => import('views/power/Roles.vue');
 const Cate = () => import('views/goods/Cate.vue');
+const Params =() => import('views/goods/Params.vue')
 
 // 安装插件
 Vue.use(Router)
@@ -48,7 +49,12 @@ const router =  new Router({
         {
           path: '/categories',
           component: Cate
-        }
+        },
+        {
+          path: '/params',
+          component: Params
+        },
+        
       ]
     }
 
