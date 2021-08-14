@@ -151,7 +151,8 @@ export default {
     // 添加商品
     goAddPage() {
       this.$router.push('/goods/add')
-    }
+    },
+    
   },
 };
 </script>
