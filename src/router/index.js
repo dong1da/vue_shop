@@ -12,7 +12,8 @@ const Cate = () => import('views/goods/Cate.vue');
 const Params =() => import('views/goods/Params.vue');
 const List = () => import('views/goods/List.vue')
 const Add = () => import('views/goods/Add.vue')
-const Order =() => import('views/order/Order.vue')
+const Order = () => import('views/order/Order.vue')
+const Report = () => import('views/report/Report')
 
 // 安装插件
 Vue.use(Router)
@@ -68,6 +69,10 @@ const router =  new Router({
         {
           path:'/orders',
           component: Order
+        },
+        {
+          path: '/reports',
+          component: Report
         }
       ]
     }
