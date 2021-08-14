@@ -24,3 +24,16 @@ html,body,#app {
 .el-pagination {
   margin-top: 15px;
 }
+
+.el-steps {
+  margin: 15px 0;
+}
+
+.el-step__title {
+  font-size: 13px !important;
+}
+
+/* 富文本高度样式 */
+.ql-editor{
+min-height: 200px;
+}

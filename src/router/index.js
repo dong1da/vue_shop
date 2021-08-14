@@ -9,7 +9,9 @@ const Users = () => import('views/user/Users');
 const Rights = () => import('views/power/Rights.vue');
 const Roles = () => import('views/power/Roles.vue');
 const Cate = () => import('views/goods/Cate.vue');
-const Params =() => import('views/goods/Params.vue')
+const Params =() => import('views/goods/Params.vue');
+const List = () => import('views/goods/List.vue')
+const Add = () => import('views/goods/Add.vue')
 
 // 安装插件
 Vue.use(Router)
@@ -54,7 +56,14 @@ const router =  new Router({
           path: '/params',
           component: Params
         },
-        
+        {
+          path: '/goods',
+          component: List
+        },
+        {
+          path: '/goods/add',
+          component: Add
+        }
       ]
     }
 
